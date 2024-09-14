@@ -127,7 +127,8 @@ public class TutorialControllerTests {
     when(tutorialRepository.findById(id)).thenReturn(Optional.of(tutorial));
     when(tutorialRepository.save(any(Tutorial.class))).thenReturn(updatedtutorial);
 
-    mockMvc.perform(put("/api/tutorials/{id}", id).contentType(MediaType.APPLICATION_JSON)
+    mockMvc.perform(put("/api/tutorials/{id}", id)
+        .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(updatedtutorial)))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.title").value(updatedtutorial.getTitle()))

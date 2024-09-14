@@ -2,20 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.1.0</version>
 		<relativePath/>
-		<!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.bezkoder</groupId>
 	<artifactId>spring-boot-rest-controller-unit-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-rest-controller-unit-test</name>
 	<description>Spring Boot test Rest Controller with @WebMvcTest</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -27,13 +28,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId> org.springframework.boot </groupId>
-			<artifactId> spring-boot-starter-actuator </artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId> javax.servlet </groupId>
-			<artifactId> javax.servlet-api </artifactId>
-			<version> 4.0.1 </version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -53,28 +54,28 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId> org.jacoco </groupId>
-				<artifactId> jacoco-maven-plugin </artifactId>
-				<version> 0.8.6 </version>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.6</version>
 				<executions>
 					<execution>
 						<goals>
-							<goal> prepare-agent </goal>
+							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
 					<execution>
-						<id> report </id>
-						<phase> prepare-package </phase>
+						<id>report</id>
+						<phase>prepare-package</phase>
 						<goals>
-							<goal> report </goal>
+							<goal>report</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId> com.github.spotbugs </groupId>
-				<artifactId> spotbugs-maven-plugin </artifactId>
-				<version> 4.7.3.0 </version>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.7.3.0</version>
 				<configuration>
 					<onlyAnalyze>nl.amis.smeetsm.demoservice.*</onlyAnalyze>
 					<omitVisitors>FindNullDeref</omitVisitors>
@@ -83,71 +84,71 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal> spotbugs </goal>
+							<goal>spotbugs</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId> org.apache.maven.plugins </groupId>
-				<artifactId> maven-checkstyle-plugin </artifactId>
-				<version> 3.1.1 </version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.1</version>
 				<configuration>
-					<encoding> UTF-8 </encoding>
-					<failsOnError> false </failsOnError>
-					<outputFile> reports/checkstyle/checkstyle.xml </outputFile>
+					<encoding>UTF-8</encoding>
+					<failsOnError>false</failsOnError>
+					<outputFile>reports/checkstyle/checkstyle.xml</outputFile>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId> org.springframework.boot </groupId>
-				<artifactId> spring-boot-maven-plugin </artifactId>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId> org.apache.maven.plugins </groupId>
-				<artifactId> maven-surefire-plugin </artifactId>
-				<version> 2.22.1 </version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
 			</plugin>
 			<plugin>
-				<groupId> org.sonarsource.scanner.maven </groupId>
-				<artifactId> sonar-maven-plugin </artifactId>
-				<version> 3.7.0.1746 </version>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.7.0.1746</version>
 			</plugin>
 			<plugin>
-				<groupId> org.apache.maven.plugins </groupId>
-				<artifactId> maven-site-plugin </artifactId>
-				<version> 3.7.1 </version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
 			</plugin>
 			<plugin>
-				<groupId> org.apache.maven.plugins </groupId>
-				<artifactId> maven-compiler-plugin </artifactId>
-				<version> 3.8.0 </version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
 				<configuration>
-					<release> 11 </release>
+					<release>11</release>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId> com.google.cloud.tools </groupId>
-				<artifactId> jib-maven-plugin </artifactId>
-				<version> 2.5.2 </version>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>2.5.2</version>
 				<configuration>
 					<to>
-						<image> docker.io/rahulpj2ee/${project.artifactId} </image>
+						<image>docker.io/rahulpj2ee/${project.artifactId}</image>
 						<tags>
-							<tag> ${project.version} </tag>
-							<tag> latest </tag>
+							<tag>${project.version}</tag>
+							<tag>latest</tag>
 						</tags>
 						<auth>
-							<username> ${env.DOCKER_USERNAME} </username>
-							<password> ${env.DOCKER_PASSWORD} </password>
+							<username>${env.DOCKER_USERNAME}</username>
+							<password>${env.DOCKER_PASSWORD}</password>
 						</auth>
 					</to>
 					<container>
 						<ports>
-							<port> 8080 </port>
+							<port>8080</port>
 						</ports>
 					</container>
 					<from>
-						<image> openjdk:11-jdk-slim </image>
+						<image>openjdk:8-jdk-slim</image>
 					</from>
 				</configuration>
 			</plugin>
